@@ -35,16 +35,8 @@ Present proposed solutions, including specific data processing methods and machi
 2. [Method 2: Description]
 3. [Method 3: Description]
 
-### ✅ 3+ ML Algorithms/Models Identified
-1. [Algorithm/Model 1: Description]
-2. [Algorithm/Model 2: Description]
-3. [Algorithm/Model 3: Description]
-
-### ✅ CS 7641: Unsupervised and Supervised Learning Methods Identified
-- [Identify the relevant methods.]
-
-### ✅ CS 4641: Supervised or Unsupervised Learning Methods Identified (Supervised is recommended in general)
-- [Identify the relevant methods.]
+### Supervised Learning
+## Yay
 
 ---
 
