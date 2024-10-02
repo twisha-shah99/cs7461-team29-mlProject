@@ -1,0 +1,24 @@
+- role: Participant
+  company: Google Developer's Group, India
+  dates: October 16-18, 2020
+  logo: devfest.png
+
+- role: Participant at Who Wants To Be A Hackionaire
+  company: Major League Hacking
+  dates: November 29 - December 1, 2020
+  logo: mlh.svg
+
+- role: Participant at SWoC'21
+  company: Script Foundation
+  dates: January 5 - February 28, 2021
+  logo: swoc.png
+
+- role: Participant at CWoD'21
+  company: Crio.Do
+  dates: January 9, 2021 - January 24, 2021
+  logo: cwod.png
+
+- role: Participant at LHD-Build
+  company: Major League Hacking
+  dates: January 10, 2021 - January 18, 2021
+  logo: mlh.svg
