@@ -3,10 +3,10 @@
 # Proposal Sections & Checklist
 
 ## Introduction/Background
-Provide an introduction to your topic, including a brief literature review of related work. Explain your dataset and its features, and provide a link to the dataset if possible.
+The application of machine learning in sports analytics has gained significant momentum, offering coaches, analysts, and teams actionable insights to improve performance. In soccer, understanding and optimizing team strategies, player selection, and match outcomes is critical for success. Traditional approaches often rely on subjective judgments, which may lead to suboptimal decisions.
 
 ### ✅ Literature Review
-- Data analytics plays a vital role in modern sports, offering insights to improve performance and strategy. The StatsBomb open dataset provides detailed soccer match data, including events like passes, shots, and tackles from various leagues. This project leverages the dataset to explore patterns in team tactics, player performance, and match outcomes. By applying machine learning and statistical analysis, the project aims to address key challenges in soccer analytics, such as predicting match results and evaluating player efficiency, with a focus on creating interpretable models for real-world use in sports management and coaching.
+- Recent studies have applied machine learning techniques to address challenges in soccer, such as optimizing team strategies and player selection. Unsupervised methods, like K-means clustering and Gaussian Mixture Models (GMM), have been used to cluster teams based on statistical features such as goals and possession, grouping them by similar tactical styles. Supervised learning techniques, including Random Forest classifiers, have been employed to predict match outcomes using historical data. These approaches help automate the analysis of teams and players, providing data-driven insights to improve team performance by enabling better strategic decisions and more effective player selection for specific matchups.
 
 ### ✅ Dataset Description
 - The [data](https://github.com/statsbomb/open-data/tree/master/data) is provided as JSON files exported from the StatsBomb Data API.
