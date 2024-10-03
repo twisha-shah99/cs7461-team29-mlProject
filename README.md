@@ -103,15 +103,20 @@ Present proposed solutions, including specific data processing methods and machi
 Identify several quantitative metrics you plan to use for the project (i.e., ML Metrics). Present goals in terms of these metrics and state any expected results.
 
 ### ✅ 3+ Quantitative Metrics
-1. [Metric 1: Description]
-2. [Metric 2: Description]
-3. [Metric 3: Description]
+1. **Adjusted Rand Index (ARI)**: Our goal would be to achieve an ARI score of 0.6 or higher, which would be indicative of a meaningful correspondence between the clusters of playing styles and any available ground truth data.
+2. **Homogeneity Score**: We aim to achieve a homogeneity score of 0.7 or higher, which would ensure that teams within each cluster exhibits consistent playing styles.
+3. **Accuracy (Supervised Learning)**: We expect an accuracy of 75% or higher when predicting match outcomes using supervised learning models like Random Forest and Gradient Boosting Machines.
+4. **Fowlkes-Mallows Index**: We aim to target an FMI score of 0.6 or higher which would ensure balanced precision and recall in our clustering results, which would in turn indicate that the clusters represent both true positives and true negatives effectively.
+5. **Cross-Validation Score**: Using cross-validation for supervised learning, we aim to achieve an accuracy of at least 70% ensuring model robustness across different subsets. 
 
 ### ✅ Project Goals
-- [Outline your project goals, including sustainability and ethical considerations.]
+- Our project aims to accurately group football teams based on their playing styles. By clustering teams, we plan to uncover patterns and similarities that would help coaches and analysts devise more effective game strategies. We would also aim to optimize player selection by matching player attributes to the characteristics of the opponents, which would in turn improve a team’s tactical response to different playing styles.
+- In addition, we also aim to predict match outcomes using different models we aim to implement. The insights gained would assist teams in preparing for upcoming matches with greater precision, utilizing data-driven decisions to optimize player performance and overall strategy.
+- Our sustainability goal would focus on minimizing the reliance on extensive manual analysis and scouting by providing detailed data-driven insights that would streamline preparation resource allocation. We would also aim to ensure the model remains ethically sound by treating all teams fairly, focusing solely on objective performance metrics and avoiding biases that could disadvantage smaller clubs or low-budget teams. 
 
 ### ✅ Expected Results
-- [Discuss the expected outcomes of your project.]
+- We expect to be able to identify distinct clusters of teams with similar playing styles, such as high-pressing or possession-based strategies. This clustering would offer actionable insights for coaches to tailor their tactics for different matchups. Additionally, our system would also aim to optimize player selection based on opponent characteristics, which would ensure that the best players are chosen to counter specific styles of play.
+- Our prediction models should achieve at least 75% accuracy in predicting match outcomes. This would help teams make more informed decisions during the preparation of games. We also expect the clustering to highlight tactical trends that would correlate with success, providing teams with deeper insights into how different playing styles interact and evolve over time.
 
 ---
 
