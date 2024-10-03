@@ -141,4 +141,17 @@ Cite relevant papers and articles utilizing the IEEE format. Ensure that all ref
 | Member 2   | [Contributions]                        |
 | Member 3   | [Contributions]                        |
 
----
+## Who Are We?
+
+Meet our dedicated team:
+
+### Team Members:
+
+- **Shreya Chivilkar**  
+  ![Shreya's Photo](./images/john.jpg)  
+  John is the lead data scientist with a background in machine learning and AI.
+
+- **Twisha Shah**  
+  ![Twisha's Photo](./images/jane.jpg)  
+  Jane specializes in backend development and cloud infrastructure.
+
