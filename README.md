@@ -32,8 +32,7 @@ Present proposed solutions, including specific data processing methods and machi
 
 ### ✅ 3+ Data Preprocessing Methods Identified
 1. [Method 1: Description]
-2. Method 2: Unsupervised Learning
-   We aim to utilize unsupervised machine learning algorithms for two main objectives:
+2. Method 2: Unsupervised Learning: We aim to utilize unsupervised machine learning algorithms for two main objectives:
    #### 1. Techniques used for: Team Clustering
       
       ##### K-means Clustering:
