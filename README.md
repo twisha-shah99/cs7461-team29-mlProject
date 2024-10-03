@@ -32,8 +32,43 @@ Present proposed solutions, including specific data processing methods and machi
 
 ### ✅ 3+ Data Preprocessing Methods Identified
 1. [Method 1: Description]
-2. [Method 2: Description]
-3. Method 3: Integration of Supervised learning and Unsupervised learning
+2. Method 2: Unsupervised Learning
+   We aim to utilize unsupervised machine learning algorithms for two main objectives:
+   #### 1. Techniques used for: Team Clustering
+      
+      ##### K-means Clustering:
+      - **Apply K-means to group teams based on their playing styles**: Teams are clustered by their statistical features (like goals scored, tackles, and possession), grouping teams with similar tactics into distinct clusters.
+      
+      - **Use the elbow method to determine the optimal number of clusters**: This method identifies the point where adding more clusters provides diminishing returns in reducing within-cluster variance, helping to find the most meaningful number of team groupings.
+      
+      - **Visualize clusters using t-SNE for dimensionality reduction**: t-SNE projects the high-dimensional team statistics into two dimensions, making it easier to visualize and interpret how teams are grouped by their playing styles.
+      
+      ##### Gaussian Mixture Models (GMM):
+      - **Implement GMM as an alternative clustering method, allowing for more flexible cluster shapes**: Unlike K-means, GMM allows each team to belong to multiple clusters with different probabilities, accommodating more complex relationships between teams.
+      
+      - **Compare GMM results with K-means to identify consistent groupings**: By comparing the results of both methods, we can ensure that the clusters are reliable and stable across different approaches, giving deeper insights into team similarities.
+      
+      ##### Hierarchical Clustering:
+      - **Perform agglomerative clustering to create a dendrogram of team similarities**: This method groups teams in a tree-like structure, making it easier to see how similar teams are to one another at different levels of granularity.
+      
+      - **Use this to identify both broad tactical families and subtle stylistic differences**: By analyzing the hierarchical tree, we can spot both large groupings of similar teams and more nuanced differences between closely related teams.
+  
+   #### 2. Techniques used for: Player-Team Compatibility Analysis
+      ##### Similarity Metrics:
+      - **Develop a cosine similarity measure between player attributes and team playing styles**: Cosine similarity will be used to quantify how closely a player's attributes (e.g., passing, shooting, defending) align with the tactical style of a team, allowing us to find players who fit the team's playing strategy.
+        
+      - **Create a compatibility score that considers both player skills and team tactical needs**: A weighted compatibility score will combine the cosine similarity of player attributes with specific team requirements, such as a need for strong defensive or offensive players, to ensure a more tailored fit for the team's tactical goals.
+      
+      ##### Optimization Algorithm:
+      - **Implement a greedy algorithm to select the best players for a given team based on player-team style compatibility**: The greedy algorithm will iteratively pick the best available player for the team by maximizing the player-team compatibility score, ensuring that the players chosen complement the team’s tactical style.
+      
+      - **Player performance metrics**: The algorithm will factor in recent player performance data, such as goals scored or defensive actions, to prioritize high-performing players in key areas that the team requires.
+      
+      - **Positional needs of the team**: The selection will also account for the team’s positional needs, ensuring that the chosen players fill gaps in the lineup and balance the squad based on the team's formation and tactical approach.
+
+
+
+4. Method 3: Integration of Supervised learning and Unsupervised learning
    <p align="justify">
    We aim to utilize machine learning techniques for clustering teams based on playing style, selecting matchups between teams from different clusters, identifying optimal players for a given matchup, and predicting the outcome of the match using historical data. Develop a system by combining unsupervised learning (K-means clustering), supervised learning (Random Forest classifier), and heuristic methods (player selection based on opponent characteristics), which would offer a sophisticated approach to team and player analysis.
    </p>
