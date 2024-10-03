@@ -3,152 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS7461 Team 29 ML Project Proposal</title>
+    <title>cs7461-team29-mlProject Proposal</title>
     <style>
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Roboto', sans-serif; 
+            color: #333; 
+            background-color: #f4f4f9; 
             line-height: 1.6;
+            margin: 0;
+            padding: 20px;
         }
-        h1, h2, h3, h4 {
-            color: #333;
+
+        /* Headers */
+        h1, h2, h3 {
+            font-family: 'Lato', sans-serif;
+            color: #2c3e50; 
+            margin-bottom: 20px;
         }
+
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid #3498db; 
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2980b9;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+
+        a {
+            color: #3498db; 
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         ul {
-            list-style-type: disc;
-            margin-left: 20px;
+            list-style-type: none;
+            padding: 0;
         }
+
+        ul li {
+            background: #ecf0f1;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
         }
+
         table, th, td {
-            border: 1px solid #000;
+            border: 1px solid #bdc3c7;
+            padding: 12px;
         }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
+
         th {
-            background-color: #f4f4f4;
+            background-color: #2c3e50;
+            color: #fff;
         }
-        code {
-            background-color: #f9f9f9;
-            padding: 2px 5px;
+
+        td {
+            background-color: #ecf0f1;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Form Elements */
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #bdc3c7;
             border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+
+        section {
+            margin-bottom: 40px;
         }
     </style>
 </head>
 <body>
+    <h1>cs7461-team29-mlProject</h1>
+    
+    <section>
+        <h2>Proposal Sections & Checklist</h2>
 
-    <h1>CS7461 Team 29 ML Project Proposal</h1>
+        <h3>Introduction/Background</h3>
+        <p>Provide an introduction to your topic, including a brief literature review of related work. Explain your dataset and its features, and provide a link to the dataset if possible.</p>
 
-    <h2>Proposal Sections & Checklist</h2>
+        <h3>✅ Literature Review</h3>
+        <p>Data analytics plays a vital role in modern sports, offering insights to improve performance and strategy. The StatsBomb open dataset provides detailed soccer match data, including events like passes, shots, and tackles from various leagues. This project leverages the dataset to explore patterns in team tactics, player performance, and match outcomes. By applying machine learning and statistical analysis, the project aims to address key challenges in soccer analytics, such as predicting match results and evaluating player efficiency, with a focus on creating interpretable models for real-world use in sports management and coaching.</p>
 
-    <h3>Introduction/Background</h3>
-    <p>Provide an introduction to your topic, including a brief literature review of related work. Explain your dataset and its features, and provide a link to the dataset if possible.</p>
+        <h3>✅ Dataset Description</h3>
+        <p>
+            - The <a href="https://github.com/statsbomb/open-data/tree/master/data">data</a> is provided as JSON files exported from the StatsBomb Data API.
+            <br>
+            - <strong>Events Data</strong>: This contains over 3 million events from around 7,000 matches, each tagged with event types like passes, shots, ball recoveries, and more, along with detailed location information.
+            <br>
+            - <strong>Matches Data</strong>: Information about the matches themselves, including teams, scores, and dates.
+            <br>
+            - <strong>Lineups Data</strong>: Details on players' positions, including their minutes played and substitutions during matches.
+            <br>
+            - <strong>Freeze Frame Data</strong>: Positional data for players at key moments, such as when a shot is taken.
+        </p>
 
-    <h4>Literature Review</h4>
-    <ul>
-        <li>[Add your literature review here.]</li>
-    </ul>
+        <h3>✅ Dataset Link</h3>
+        <p><a href="https://github.com/statsbomb/open-data">Dataset</a></p>
+    </section>
 
-    <h4>Dataset Description</h4>
-    <ul>
-        <li>[Describe your dataset, including its features and significance.]</li>
-    </ul>
+    <section>
+        <h3>Problem Definition</h3>
+        
+        <h3>✅ Problem</h3>
+        <p>Football teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches often rely on subjective judgements that can lead to poor team performance in games.</p>
 
-    <h4>Dataset Link (if applicable)</h4>
-    <ul>
-        <li>[Provide the link to your dataset here.]</li>
-    </ul>
+        <h3>✅ Motivation</h3>
+        <p>Automating the analysis of teams to explore the best playing styles can allow teams to make better and strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams to best select their players and strategy. This, in turn, will help teams better prepare for their games and enhance their performance in games.</p>
+    </section>
 
-    <hr>
+    <section>
+        <h3>Methods</h3>
+        
+        <h3>✅ 3+ Data Preprocessing Methods Identified</h3>
+        <p>1. Method 1: Description</p>
+        <p>2. <strong>Method 2: Unsupervised Learning</strong>: We aim to utilize unsupervised machine learning algorithms for two main objectives:...</p>
 
-    <h3>Problem Definition</h3>
+    </section>
 
-    <h4>Problem</h4>
-    <p>Football teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches often rely on subjective judgments that can lead to poor team performance in games.</p>
+    <section>
+        <h3>Results and Discussion</h3>
 
-    <h4>Motivation</h4>
-    <p>Automating the analysis of teams to explore the best playing styles can allow teams to make better and more strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams select their players and strategy better. This, in turn, will help teams prepare better for games and improve performance.</p>
+        <h3>✅ 3+ Quantitative Metrics</h3>
+        <ul>
+            <li>Adjusted Rand Index (ARI): Target score of 0.6 or higher.</li>
+            <li>Homogeneity Score: Aim for 0.7 or higher.</li>
+            <li>Accuracy (Supervised Learning): Expect at least 75% accuracy.</li>
+        </ul>
 
-    <hr>
 
-    <h3>Methods</h3>
+    </section>
 
-    <h4>Data Preprocessing Methods</h4>
-    <p>Present proposed solutions, including specific data processing methods and machine learning algorithms, elaborating on their effectiveness.</p>
+    <section>
+        <h3>References</h3>
+        <p>Cite relevant papers and articles utilizing the IEEE format. Ensure that all references in this section have matching in-text citations in the body of your proposal text.</p>
 
-    <h5>Unsupervised Learning: Team Clustering</h5>
-    <ul>
-        <li>K-means Clustering</li>
-        <li>Gaussian Mixture Models (GMM)</li>
-        <li>Hierarchical Clustering</li>
-    </ul>
-
-    <h5>Player-Team Compatibility Analysis</h5>
-    <ul>
-        <li>Cosine Similarity</li>
-        <li>Optimization Algorithm</li>
-    </ul>
-
-    <hr>
-
-    <h3>(Potential) Results and Discussion</h3>
-    <p>This project would employ both supervised and unsupervised learning techniques to analyze football teams and players. Our integrated system would cluster teams by playing styles, simulate matchups, identify optimal players for a particular match-up, and predict match outcomes using machine learning models.</p>
-
-    <h4>Quantitative Metrics</h4>
-    <ul>
-        <li>Adjusted Rand Index (ARI)</li>
-        <li>Homogeneity Score</li>
-        <li>Accuracy (Supervised Learning)</li>
-        <li>Fowlkes-Mallows Index</li>
-        <li>Cross-Validation Score</li>
-    </ul>
-
-    <h4>Project Goals</h4>
-    <p>Our project aims to accurately group football teams based on their playing styles. By clustering teams, we plan to uncover patterns and similarities that will help coaches and analysts devise more effective game strategies.</p>
-
-    <hr>
-
-    <h3>References</h3>
-    <ul>
-        <li>[Reference 1]</li>
-        <li>[Reference 2]</li>
-        <li>[Reference 3]</li>
-    </ul>
-
-    <hr>
-
-    <h3>Proposal Submission Requirements</h3>
-
-    <h4>Gantt Chart</h4>
-    <p>[Insert Gantt Chart here.]</p>
-
-    <h4>Contribution Table</h4>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Proposal Contributions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Member 1</td>
-                <td>[Contributions]</td>
-            </tr>
-            <tr>
-                <td>Member 2</td>
-                <td>[Contributions]</td>
-            </tr>
-            <tr>
-                <td>Member 3</td>
-                <td>[Contributions]</td>
-            </tr>
-        </tbody>
-    </table>
-
+        <h3>✅ 3+ References (preferably peer-reviewed)</h3>
+        <p>1. [Reference 1]</p>
+        <p>2. [Reference 2]</p>
+        <p>3. [Reference 3]</p>
+    </section>
 </body>
 </html>
