@@ -100,7 +100,7 @@ Present proposed solutions, including specific data processing methods and machi
 ---
 
 ## (Potential) Results and Discussion
-Identify several quantitative metrics you plan to use for the project (i.e., ML Metrics). Present goals in terms of these metrics and state any expected results.
+This project would employ both supervised and unsupervised learning techniques to analyze football teams and the players. Our integrated system would cluster teams by playing styles, simulating matchups, identifying optimal players for a particular match-up, and predicting match outcomes using machine learning models. 
 
 ### ✅ 3+ Quantitative Metrics
 1. **Adjusted Rand Index (ARI)**: Our goal would be to achieve an ARI score of 0.6 or higher, which would be indicative of a meaningful correspondence between the clusters of playing styles and any available ground truth data.
