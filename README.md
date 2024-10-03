@@ -8,7 +8,8 @@ The application of machine learning in sports analytics has gained significant m
 ### ✅ Literature Review
 - Recent studies have applied machine learning techniques to address challenges in soccer, such as optimizing team strategies and player selection.
 - Unsupervised methods, like K-means clustering and Gaussian Mixture Models (GMM), have been used to cluster teams based on statistical features such as goals and possession, grouping them by similar tactical styles.
-- Supervised learning techniques, including Random Forest classifiers, have been employed to predict match outcomes using historical data. These approaches help automate the analysis of teams and players, providing data-driven insights to improve team performance by enabling better strategic decisions and more effective player selection for specific matchups.
+- Supervised learning techniques, including Random Forest classifiers, have been employed to predict match outcomes using historical data.
+- These approaches help automate the analysis of teams and players, providing data-driven insights to improve team performance by enabling better strategic decisions and more effective player selection for specific matchups.
 
 ### ✅ Dataset Description
 - The [data](https://github.com/statsbomb/open-data/tree/master/data) is provided as JSON files exported from the StatsBomb Data API.
