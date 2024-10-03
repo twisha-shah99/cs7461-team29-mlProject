@@ -33,7 +33,10 @@ Present proposed solutions, including specific data processing methods and machi
 ### ✅ 3+ Data Preprocessing Methods Identified
 1. [Method 1: Description]
 2. [Method 2: Description]
-3. [Method 3: Description]
+3. Method 3: Integration of Supervised learning and Unsupervised learning
+   
+   We aim to utilize machine learning techniques for clustering teams based on playing style, selecting matchups between teams from different clusters, identifying optimal players for a given matchup, and predicting the outcome of the match using historical data. Develop a system by combining unsupervised learning (K-means clustering), supervised learning (Random Forest classifier), and heuristic methods (player selection based on opponent characteristics), which would offer a sophisticated approach to team and player analysis.
+
 
 ### Supervised Learning
 ## Yay
