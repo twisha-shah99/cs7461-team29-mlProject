@@ -6,13 +6,18 @@
 Provide an introduction to your topic, including a brief literature review of related work. Explain your dataset and its features, and provide a link to the dataset if possible.
 
 ### ✅ Literature Review
-- [Add your literature review here.]
+- Data analytics plays a vital role in modern sports, offering insights to improve performance and strategy. The StatsBomb open dataset provides detailed soccer match data, including events like passes, shots, and tackles from various leagues. This project leverages the dataset to explore patterns in team tactics, player performance, and match outcomes. By applying machine learning and statistical analysis, the project aims to address key challenges in soccer analytics, such as predicting match results and evaluating player efficiency, with a focus on creating interpretable models for real-world use in sports management and coaching.
 
 ### ✅ Dataset Description
-- [Describe your dataset, including its features and significance.]
+- The [data](https://github.com/statsbomb/open-data/tree/master/data) is provided as JSON files exported from the StatsBomb Data API.
+- **Events Data**: This contains over 3 million events from around 7,000 matches, each tagged with event types like passes, shots, ball recoveries, and more, along with detailed location information. 
+- **Matches Data**: Information about the matches themselves, including teams, scores, and dates. 
+- **Lineups Data**: Details on players' positions, including their minutes played and substitutions during matches. 
+- **Freeze Frame Data**: Positional data for players at key moments, such as when a shot is taken.
+- More documentation about the meaning of different events and the format of the JSON can be found in the [`doc`](https://github.com/statsbomb/open-data/tree/master/doc) directory.
 
-### ✅ Dataset Link (if applicable)
-- [Provide the link to your dataset here.]
+### ✅ Dataset Link
+- [Dataset](https://github.com/statsbomb/open-data)
 
 ---
 
