@@ -108,73 +108,16 @@
 <h3>✅ 3+ Data Preprocessing Methods Identified</h3>
 
 <ol>
-  <li><strong>[Method 1: Description]</strong></li>
+  <li><strong>[Method 1: Supervised Learning]</strong></li>
+    <p>We are pursuing three main objectives: player transfer evaluation, player performance prediction, and shot outcome prediction. The Player Transfer Evaluation System uses supervised learning to assess transfer success by analyzing player stats, team metrics, and transfer details. A Random Forest Classifier predicts transfer success, a Gradient Boosting Machine forecasts performance improvements, and an SVM classifies transfers as good or poor fits. For shot outcome prediction, models like Logistic Regression or Random Forest predict goal likelihood based on shot features. Lastly, player performance prediction employs a Gradient Boosting Regressor to forecast ratings based on recent form and opponent strength.</p>
   
-  <li><strong>Method 2: Unsupervised Learning:</strong> We aim to utilize unsupervised machine learning algorithms for two main objectives:
-  
-    <h4>1. Techniques used for: Team Clustering</h4>
-    
-    <h5>K-means Clustering:</h5>
-    <ul>
-      <li><strong>Apply K-means to group teams based on their playing styles</strong>: Teams are clustered by their statistical features (like goals scored, tackles, and possession), grouping teams with similar tactics into distinct clusters.</li>
-      <li><strong>Use the elbow method to determine the optimal number of clusters</strong>: This method identifies the point where adding more clusters provides diminishing returns in reducing within-cluster variance, helping to find the most meaningful number of team groupings.</li>
-      <li><strong>Visualize clusters using t-SNE for dimensionality reduction</strong>: t-SNE projects the high-dimensional team statistics into two dimensions, making it easier to visualize and interpret how teams are grouped by their playing styles.</li>
-    </ul>
-    
-    <h5>Gaussian Mixture Models (GMM):</h5>
-    <ul>
-      <li><strong>Implement GMM as an alternative clustering method, allowing for more flexible cluster shapes</strong>: Unlike K-means, GMM allows each team to belong to multiple clusters with different probabilities, accommodating more complex relationships between teams.</li>
-      <li><strong>Compare GMM results with K-means to identify consistent groupings</strong>: By comparing the results of both methods, we can ensure that the clusters are reliable and stable across different approaches, giving deeper insights into team similarities.</li>
-    </ul>
-    
-    <h5>Hierarchical Clustering:</h5>
-    <ul>
-      <li><strong>Perform agglomerative clustering to create a dendrogram of team similarities</strong>: This method groups teams in a tree-like structure, making it easier to see how similar teams are to one another at different levels of granularity.</li>
-      <li><strong>Use this to identify both broad tactical families and subtle stylistic differences</strong>: By analyzing the hierarchical tree, we can spot both large groupings of similar teams and more nuanced differences between closely related teams.</li>
-    </ul>
-  
-    <h4>2. Techniques used for: Player-Team Compatibility Analysis</h4>
-    
-    <h5>Similarity Metrics:</h5>
-    <ul>
-      <li><strong>Develop a cosine similarity measure between player attributes and team playing styles</strong>: Cosine similarity will be used to quantify how closely a player's attributes (e.g., passing, shooting, defending) align with the tactical style of a team, allowing us to find players who fit the team's playing strategy.</li>
-      <li><strong>Create a compatibility score that considers both player skills and team tactical needs</strong>: A weighted compatibility score will combine the cosine similarity of player attributes with specific team requirements, such as a need for strong defensive or offensive players, to ensure a more tailored fit for the team's tactical goals.</li>
-    </ul>
-    
-    <h5>Optimization Algorithm:</h5>
-    <ul>
-      <li><strong>Implement a greedy algorithm to select the best players for a given team based on player-team style compatibility</strong>: The greedy algorithm will iteratively pick the best available player for the team by maximizing the player-team compatibility score, ensuring that the players chosen complement the team’s tactical style.</li>
-      <li><strong>Player performance metrics</strong>: The algorithm will factor in recent player performance data, such as goals scored or defensive actions, to prioritize high-performing players in key areas that the team requires.</li>
-      <li><strong>Positional needs of the team</strong>: The selection will also account for the team’s positional needs, ensuring that the chosen players fill gaps in the lineup and balance the squad based on the team's formation and tactical approach.</li>
-    </ul>
-  
-  </li>
-  
+  <li><strong>Method 2: Unsupervised Learning:</strong></li>
+    <p>We aim to use unsupervised learning for two key objectives: team clustering and player-team compatibility analysis. For team clustering, K-means clustering will group teams by playing styles using features like goals scored, tackles, and possession. The elbow method will help find the optimal number of clusters, and t-SNE will be used to visualize the clusters. We will also implement Gaussian Mixture Models (GMM) for more flexible clustering, allowing teams to belong to multiple clusters, and use Hierarchical Clustering to explore broad and nuanced team similarities.
+For player-team compatibility, we will develop a cosine similarity measure to quantify how well a player’s skills align with a team's tactical needs. A compatibility score will combine this similarity with team-specific requirements. To select the best players, a greedy algorithm will maximize compatibility while considering recent performance and positional needs.</p>
   <li><strong>Method 3: Integration of Supervised learning and Unsupervised learning</strong></li>
   <p>
     We aim to utilize machine learning techniques for clustering teams based on playing style, selecting matchups between teams from different clusters, identifying optimal players for a given matchup, and predicting the outcome of the match using historical data. Develop a system by combining unsupervised learning (K-means clustering), supervised learning (Random Forest classifier), and heuristic methods (player selection based on opponent characteristics), which would offer a sophisticated approach to team and player analysis.
-  </p>
-  
-  <h4>Steps:</h4>
-  <ol>
-    <li><strong>Clustering Teams Based on Playing Style:</strong> We will first extract team playing style features from the available dataset, which may include:
-      <ul>
-        <li><strong>Offensive metrics</strong>: Goals scored, shots on target, passing accuracy in the attacking third, etc.</li>
-        <li><strong>Defensive metrics</strong>: Tackles made, interceptions, clearances, etc.</li>
-        <li><strong>Possession metrics</strong>: Time in possession, passes completed, and ball retention.</li>
-        <li><strong>Form</strong>: A measure of the team's performance in recent matches.</li>
-      </ul>
-      These features will be normalized using <code>StandardScaler</code> to ensure uniformity across different ranges of metrics. After normalizing the data, <strong>K-means clustering</strong> will be applied to group teams into clusters based on their playing style. The clustering result will provide a set of groups where each group (cluster) represents teams with similar playing styles.
-    </li>
-    
-    <li><strong>Visualizing Clusters:</strong> To visualize the results, we will apply t-SNE (t-distributed stochastic neighbor embedding) to reduce the dimensionality of the playing style features, allowing us to plot teams in a 2D space. Each point will represent a team, and the color will represent its cluster.</li>
-    
-    <li><strong>Selecting Teams to Play Against Each Other:</strong> To ensure diversity in matchups, we will randomly select two teams from different clusters. This ensures that teams with varying playing styles are chosen for the simulated match.</li>
-    
-    <li><strong>Finding Best Players Based on Opponent:</strong> We will implement a system that identifies the best players for one team based on how well they can counter the playing style of the opposing team. This will involve comparing the playing styles of both teams and identifying which players from the opponent's squad are best suited to exploit the weaknesses of the first team.</li>
-    
-    <li><strong>Predicting Match Outcome:</strong> Using historical match data, we will train a Random Forest classifier to predict the outcome of a match based on the playing styles (clusters) of both teams and their recent form. This will allow us to predict the likely outcome and the probabilities of each team winning.</li>
-  </ol>
+  </p> 
   
   <h4>Tools and Technologies:</h4>
   <ul>
