@@ -3,42 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS7461 Team 29 ML Project Proposal</title>
+    <title>CS7461 Team 29 - ML Project Proposal</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-            color: #333;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 0 20px;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        h1, h2, h3, h4, h5 {
-            color: #2c3e50;
+        h1, h2, h3 {
+            color: #0056b3;
         }
         h1 {
-            font-size: 2.5rem;
             text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
         }
-        h2 {
-            font-size: 2rem;
-            margin-top: 40px;
+        a {
+            color: #0056b3;
+            text-decoration: none;
         }
-        h3, h4, h5 {
-            margin-top: 30px;
+        a:hover {
+            text-decoration: underline;
         }
-        p, ul, li {
-            font-size: 1rem;
-            margin-bottom: 20px;
+        ul, ol {
+            margin-left: 20px;
         }
-        ul {
-            list-style-type: disc;
-            margin-left: 40px;
-        }
-        hr {
-            border: 1px solid #ddd;
-            margin: 40px 0;
+        .content-section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         table {
             width: 100%;
@@ -47,134 +43,131 @@
         }
         table, th, td {
             border: 1px solid #ccc;
+        }
+        th, td {
             padding: 10px;
             text-align: left;
         }
         th {
-            background-color: #3498db;
-            color: white;
-        }
-        td {
-            background-color: #ecf0f1;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 5px;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
+            background-color: #f2f2f2;
         }
     </style>
 </head>
 <body>
+    <h1>CS7461 Team 29 - ML Project Proposal</h1>
 
-    <h1>CS7461 Team 29 ML Project Proposal</h1>
+    <div class="content-section">
+        <h2>Introduction/Background</h2>
+        <p>The application of machine learning in sports analytics has gained significant momentum, offering coaches, analysts, and teams actionable insights to improve performance. In soccer, understanding and optimizing team strategies, player selection, and match outcomes is critical for success. Traditional approaches often rely on subjective judgments, which may lead to suboptimal decisions.</p>
+        
+        <h3>Literature Review</h3>
+        <p>Recent studies have applied machine learning techniques to address challenges in soccer, such as optimizing team strategies and player selection. Unsupervised methods, like K-means clustering and Gaussian Mixture Models (GMM), have been used to cluster teams based on statistical features such as goals and possession, grouping them by similar tactical styles. Supervised learning techniques, including Random Forest classifiers, have been employed to predict match outcomes using historical data. These approaches help automate the analysis of teams and players, providing data-driven insights to improve team performance by enabling better strategic decisions and more effective player selection for specific matchups.</p>
 
-    <h2>Proposal Sections & Checklist</h2>
+        <h3>Dataset Description</h3>
+        <ul>
+            <li><strong>Events Data:</strong> Contains over 3 million events from around 7,000 matches, each tagged with event types like passes, shots, ball recoveries, and more, along with detailed location information.</li>
+            <li><strong>Matches Data:</strong> Information about the matches themselves, including teams, scores, and dates.</li>
+            <li><strong>Lineups Data:</strong> Details on players' positions, including their minutes played and substitutions during matches.</li>
+            <li><strong>Freeze Frame Data:</strong> Positional data for players at key moments, such as when a shot is taken.</li>
+        </ul>
+        <p>More documentation about the meaning of different events and the format of the JSON can be found in the <a href="https://github.com/statsbomb/open-data/tree/master/doc">documentation directory</a>.</p>
 
-    <h3>Introduction/Background</h3>
-    <p>Provide an introduction to your topic, including a brief literature review of related work. Explain your dataset and its features, and provide a link to the dataset if possible.</p>
+        <h3>Dataset Link</h3>
+        <p><a href="https://github.com/statsbomb/open-data">Dataset</a></p>
+    </div>
 
-    <h4>Literature Review</h4>
-    <ul>
-        <li>[Add your literature review here.]</li>
-    </ul>
+    <div class="content-section">
+        <h2>Problem Definition</h2>
 
-    <h4>Dataset Description</h4>
-    <ul>
-        <li>[Describe your dataset, including its features and significance.]</li>
-    </ul>
+        <h3>Problem</h3>
+        <p>Football teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches often rely on subjective judgments that can lead to poor team performance in games.</p>
 
-    <h4>Dataset Link (if applicable)</h4>
-    <ul>
-        <li>[Provide the link to your dataset here.]</li>
-    </ul>
+        <h3>Motivation</h3>
+        <p>Automating the analysis of teams to explore the best playing styles can allow teams to make better and strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams to best select their players and strategy. This, in turn, will help teams better prepare for their games and enhance their performance in games.</p>
+    </div>
 
-    <hr>
+    <div class="content-section">
+        <h2>Methods</h2>
+        <h3>3+ Data Preprocessing Methods Identified</h3>
+        <ul>
+            <li><strong>Method 1:</strong> [Description]</li>
+            <li><strong>Method 2: Unsupervised Learning</strong></li>
+            <ul>
+                <li><strong>Techniques used for: Team Clustering</strong></li>
+                <ul>
+                    <li><strong>K-means Clustering:</strong> Apply K-means to group teams based on their playing styles...</li>
+                    <li><strong>Gaussian Mixture Models (GMM):</strong> Implement GMM as an alternative clustering method...</li>
+                    <li><strong>Hierarchical Clustering:</strong> Perform agglomerative clustering to create a dendrogram of team similarities...</li>
+                </ul>
+            </ul>
+            <li><strong>Method 3: Integration of Supervised learning and Unsupervised learning</strong></li>
+            <p>We aim to utilize machine learning techniques for clustering teams based on playing style, selecting matchups...</p>
+        </ul>
+        
+        <h3>Supervised Learning</h3>
+        <p>[More information]</p>
+    </div>
 
-    <h3>Problem Definition</h3>
+    <div class="content-section">
+        <h2>(Potential) Results and Discussion</h2>
 
-    <h4>Problem</h4>
-    <p>Football teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches often rely on subjective judgments that can lead to poor team performance in games.</p>
+        <h3>3+ Quantitative Metrics</h3>
+        <ul>
+            <li><strong>Adjusted Rand Index (ARI):</strong> Our goal would be to achieve an ARI score of 0.6 or higher...</li>
+            <li><strong>Homogeneity Score:</strong> We aim to achieve a homogeneity score of 0.7 or higher...</li>
+            <li><strong>Accuracy (Supervised Learning):</strong> We expect an accuracy of 75% or higher...</li>
+        </ul>
 
-    <h4>Motivation</h4>
-    <p>Automating the analysis of teams to explore the best playing styles can allow teams to make better and more strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams select their players and strategy better. This, in turn, will help teams prepare better for games and improve performance.</p>
+        <h3>Project Goals</h3>
+        <p>Our project aims to accurately group football teams based on their playing styles...</p>
 
-    <hr>
+        <h3>Expected Results</h3>
+        <p>We expect to be able to identify distinct clusters of teams with similar playing styles...</p>
+    </div>
 
-    <h3>Methods</h3>
+    <div class="content-section">
+        <h2>References</h2>
+        <h3>3+ References (preferably peer-reviewed)</h3>
+        <ol>
+            <li>[Reference 1]</li>
+            <li>[Reference 2]</li>
+            <li>[Reference 3]</li>
+        </ol>
 
-    <h4>Data Preprocessing Methods</h4>
-    <p>Present proposed solutions, including specific data processing methods and machine learning algorithms, elaborating on their effectiveness.</p>
+        <h3>1+ In-Text Citation Per Reference</h3>
+        <p>[Provide in-text citations as necessary.]</p>
+    </div>
 
-    <h5>Unsupervised Learning: Team Clustering</h5>
-    <ul>
-        <li>K-means Clustering</li>
-        <li>Gaussian Mixture Models (GMM)</li>
-        <li>Hierarchical Clustering</li>
-    </ul>
+    <div class="content-section">
+        <h2>Proposal Submission Requirements</h2>
 
-    <h5>Player-Team Compatibility Analysis</h5>
-    <ul>
-        <li>Cosine Similarity</li>
-        <li>Optimization Algorithm</li>
-    </ul>
+        <h3>Gantt Chart</h3>
+        <p>List each member's planned responsibilities for the entirety of the project. Feel free to use the Fall and Spring semester sample Gantt Chart.</p>
+        <p>[Insert Gantt Chart here.]</p>
 
-    <hr>
-
-    <h3>(Potential) Results and Discussion</h3>
-    <p>This project would employ both supervised and unsupervised learning techniques to analyze football teams and players. Our integrated system would cluster teams by playing styles, simulate matchups, identify optimal players for a particular match-up, and predict match outcomes using machine learning models.</p>
-
-    <h4>Quantitative Metrics</h4>
-    <ul>
-        <li>Adjusted Rand Index (ARI)</li>
-        <li>Homogeneity Score</li>
-        <li>Accuracy (Supervised Learning)</li>
-        <li>Fowlkes-Mallows Index</li>
-        <li>Cross-Validation Score</li>
-    </ul>
-
-    <h4>Project Goals</h4>
-    <p>Our project aims to accurately group football teams based on their playing styles. By clustering teams, we plan to uncover patterns and similarities that will help coaches and analysts devise more effective game strategies.</p>
-
-    <hr>
-
-    <h3>References</h3>
-    <ul>
-        <li>[Reference 1]</li>
-        <li>[Reference 2]</li>
-        <li>[Reference 3]</li>
-    </ul>
-
-    <hr>
-
-    <h3>Proposal Submission Requirements</h3>
-
-    <h4>Gantt Chart</h4>
-    <p>[Insert Gantt Chart here.]</p>
-
-    <h4>Contribution Table</h4>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Proposal Contributions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Member 1</td>
-                <td>[Contributions]</td>
-            </tr>
-            <tr>
-                <td>Member 2</td>
-                <td>[Contributions]</td>
-            </tr>
-            <tr>
-                <td>Member 3</td>
-                <td>[Contributions]</td>
-            </tr>
-        </tbody>
-    </table>
-
+        <h3>Contribution Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Proposal Contributions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Member 1</td>
+                    <td>[Contributions]</td>
+                </tr>
+                <tr>
+                    <td>Member 2</td>
+                    <td>[Contributions]</td>
+                </tr>
+                <tr>
+                    <td>Member 3</td>
+                    <td>[Contributions]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
