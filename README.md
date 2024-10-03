@@ -17,13 +17,12 @@ Provide an introduction to your topic, including a brief literature review of re
 ---
 
 ## Problem Definition
-Identify a problem and motivate the need for a solution.
 
 ### ✅ Problem
-- [Clearly define the problem you are addressing.]
+Football teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches oftern rely on subjective judgements that an lead to poor team performance in games.
 
 ### ✅ Motivation
-- [Explain why this problem needs to be solved and its importance.]
+Automating the analysis of teams to explore the best playing styles can allow teams to make better and strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams to best select their players and strategy. This, in turn, will help teams better prepare for their games and enhance their performance in games. 
 
 ---
 
