@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS7461 Team 29 - ML Project Proposal</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,6 +56,7 @@
 </head>
 <body>
     <h1>CS7461 Team 29 - ML Project Proposal</h1>
+    <h1>Optimizing Player Selection</h1>
 
     <div class="content-section">
         <h2>Introduction/Background</h2>
@@ -69,7 +71,7 @@
                 Unsupervised methods, like K-means clustering and Gaussian Mixture Models (GMM), have been used to cluster teams based on statistical features such as goals and possession, grouping them by similar tactical styles.
             </li>
             <li>
-                Supervised learning techniques, including Random Forest classifiers, have been employed to predict match outcomes using historical data.
+                Supervised learning techniques will be utilized to classify players and identify the best team compositions based on comprehensive player attributes and performance metrics.
             </li>
             <li>
                 These approaches help automate the analysis of teams and players, providing data-driven insights to improve team performance by enabling better strategic decisions and more effective player selection for specific matchups.
@@ -103,11 +105,44 @@
 <div class="content-section">
     <h2>Methods</h2>
 
-<p>Present proposed solutions, including specific data processing methods and machine learning algorithms, elaborating on their effectiveness. Identify specific functions/classes in existing packages and libraries (e.g., scikit-learn) rather than coding the algorithms from scratch.</p>
+<!-- <p>Present proposed solutions, including specific data processing methods and machine learning algorithms, elaborating on their effectiveness. Identify specific functions/classes in existing packages and libraries (e.g., scikit-learn) rather than coding the algorithms from scratch.</p> -->
 
-<h3>✅ 3+ Data Preprocessing Methods Identified</h3>
+<h3>Data Preprocessing Methods Identified</h3>
 
+    <ol>
+      <li><strong>Exploratory Data Analysis to find important features</strong></li>
+      <li><strong>Feature Engineering - to make relevant combinations of features</strong></li>
+      <li><strong>Principal Component Analysis for Dimensionality Reduction</strong></li>
+    </ol>
+
+<h3>Unsupervised Learning</h3>  
+    <p>Team Cluster Analysis</p>
+    <ol>
+        We will employ K-means clustering to group teams based on their playing styles, utilizing features such as goals scored, tackles made, and possession statistics. The optimal number of clusters will be determined using the elbow method, and t-SNE will be used for cluster visualization. To capture more nuanced team characteristics, we'll implement Gaussian Mixture Models (GMM) for flexible clustering and Hierarchical Clustering for multi-level similarity analysis.
+        <li><strong>Method 1: K-Means + GMM</strong></li>
+          <li><strong>Method 2: Hierarchial Clustering</strong></li>
+    </ol>
+    
+<h3>Supervised Learning</h3>  
+<p>Player Metric Evaluation</p>    
 <ol>
+    We aim to create a comprehensive football player classification system using advanced machine learning techniques with the StatsBomb dataset. We will combine ensemble methods, including XGBoost, Random Forest, and Support Vector Machines, to categorize players by position, role, and playing style. By analyzing features such as physical attributes, technical skills, tactical awareness, and performance statistics, we aim to enhance tactical analysis and understand player dynamics within teams.
+  <li><strong>Method 1: SVM</strong></li>
+  <li><strong>Method 2: Random Forest</strong></li>
+  <li><strong>Method 3: Gradient Boost</strong></li>
+
+<h3>Integrating Supervised and Unsupervised Learning</h3>  
+    <p>This integrated approach combines clustering techniques to identify team playing styles with supervised learning methods for player classification and performance evaluation. By merging these analyses, we create a comprehensive system that can assess how well individual players fit into specific team compositions and predict potential match outcomes when considering lineup changes or transfers. </p>
+  <h4>Tools and Technologies:</h4>
+  <ul>
+    <li>🐍 <strong>Python Libraries</strong>: Scikit-learn (for K-means, t-SNE, Random Forest, GMM), xGBoost, Pandas, Matplotlib, Seaborn, NumPy</li>
+    <li>🤖 <strong>Machine Learning Algorithms</strong>: K-means clustering, t-SNE for visualization, Random Forest classifier, Gradient Boosting Machine, SVM, Gaussian Mixture Models, Hierarchical Clustering</li>
+    <li>📊 <strong>Data</strong>: Team statistics, player statistics, transfer data, historical match data</li>
+  </ul>
+
+</ol>
+    
+<!-- <ol>
   <li><strong>Method 1: Supervised Learning</strong></li>
     <p>We are pursuing three main objectives: player transfer evaluation, player performance prediction, and shot outcome prediction. The Player Transfer Evaluation System uses supervised learning to assess transfer success by analyzing player stats, team metrics, and transfer details. A Random Forest Classifier predicts transfer success, a Gradient Boosting Machine forecasts performance improvements, and an SVM classifies transfers as good or poor fits. For shot outcome prediction, models like Logistic Regression or Random Forest predict goal likelihood based on shot features. Lastly, player performance prediction employs a Gradient Boosting Regressor to forecast ratings based on recent form and opponent strength.</p>
   
@@ -126,7 +161,7 @@ For player-team compatibility, we will develop a cosine similarity measure to qu
     <li>📊 <strong>Data</strong>: Team statistics, player statistics, transfer data, historical match data</li>
   </ul>
 
-</ol>
+</ol> -->
 </div>
 
 
@@ -134,8 +169,10 @@ For player-team compatibility, we will develop a cosine similarity measure to qu
     <h2>(Potential) Results and Discussion</h2>
     <p>This project would employ both supervised and unsupervised learning techniques to analyze football teams and the players. Our integrated system would cluster teams by playing styles, simulating matchups, identifying optimal players for a particular match-up, and predicting match outcomes using machine learning models.</p>
 
-    <h3>✅ 3+ Quantitative Metrics</h3>
+    <h3>✅ Quantitative Metrics</h3>
     <ol>
+        <li><strong>F-1 Score:</strong> We aim for an F-1 score of 0.8 or higher, balancing precision and recall in our player classification models.</li> 
+        <li><strong>Root Mean Square Error (RMSE):</strong> For regression tasks like predicting player ratings, we target an RMSE of 0.5 or lower, indicating high prediction accuracy.</li> 
         <li><strong>Adjusted Rand Index (ARI):</strong> Our goal would be to achieve an ARI score of 0.6 or higher, which would be indicative of a meaningful correspondence between the clusters of playing styles and any available ground truth data.</li>
         <li><strong>Homogeneity Score:</strong> We aim to achieve a homogeneity score of 0.7 or higher, which would ensure that teams within each cluster exhibits consistent playing styles.</li>
         <li><strong>Accuracy (Supervised Learning):</strong> We expect an accuracy of 75% or higher when predicting match outcomes using supervised learning models like Random Forest and Gradient Boosting Machines.</li>
@@ -143,14 +180,14 @@ For player-team compatibility, we will develop a cosine similarity measure to qu
         <li><strong>Cross-Validation Score:</strong> Using cross-validation for supervised learning, we aim to achieve an accuracy of at least 70% ensuring model robustness across different subsets.</li>
     </ol>
 
-    <h3>✅ Project Goals</h3>
+    <h3>Project Goals</h3>
     <ul>
         <li>Our project aims to accurately group football teams based on their playing styles. By clustering teams, we plan to uncover patterns and similarities that would help coaches and analysts devise more effective game strategies. We would also aim to optimize player selection by matching player attributes to the characteristics of the opponents, which would in turn improve a team’s tactical response to different playing styles.</li>
         <li>In addition, we also aim to predict match outcomes using different models we aim to implement. The insights gained would assist teams in preparing for upcoming matches with greater precision, utilizing data-driven decisions to optimize player performance and overall strategy.</li>
         <li>Our sustainability goal would focus on minimizing the reliance on extensive manual analysis and scouting by providing detailed data-driven insights that would streamline preparation resource allocation. We would also aim to ensure the model remains ethically sound by treating all teams fairly, focusing solely on objective performance metrics and avoiding biases that could disadvantage smaller clubs or low-budget teams.</li>
     </ul>
 
-    <h3>✅ Expected Results</h3>
+    <h3>Expected Results</h3>
     <ul>
         <li>We expect to be able to identify distinct clusters of teams with similar playing styles, such as high-pressing or possession-based strategies. This clustering would offer actionable insights for coaches to tailor their tactics for different matchups. Additionally, our system would also aim to optimize player selection based on opponent characteristics, which would ensure that the best players are chosen to counter specific styles of play.</li>
         <li>Our prediction models should achieve at least 75% accuracy in predicting match outcomes. This would help teams make more informed decisions during the preparation of games. We also expect the clustering to highlight tactical trends that would correlate with success, providing teams with deeper insights into how different playing styles interact and evolve over time.</li>
@@ -160,42 +197,54 @@ For player-team compatibility, we will develop a cosine similarity measure to qu
         <h2>References</h2>
         <h3>3+ References (preferably peer-reviewed)</h3>
         <ol>
-            <li>[Reference 1]</li>
-            <li>[Reference 2]</li>
+            <li>[https://www.guidetofootball.com/tactics/role-categories/]</li>
+            <li>[https://statsbomb.com/what-we-do/american-football-data-and-iq/]</li>
             <li>[Reference 3]</li>
         </ol>
 
-        <h3>1+ In-Text Citation Per Reference</h3>
-        <p>[Provide in-text citations as necessary.]</p>
+<!--         <h3>1+ In-Text Citation Per Reference</h3>
+        <p>[Provide in-text citations as necessary.]</p> -->
     </div>
 
     <div class="content-section">
         <h2>Proposal Submission Requirements</h2>
 
         <h3>Gantt Chart</h3>
-        <p>List each member's planned responsibilities for the entirety of the project. Feel free to use the Fall and Spring semester sample Gantt Chart.</p>
-        <p>[Insert Gantt Chart here.]</p>
+<!--         <p>List each member's planned responsibilities for the entirety of the project. Feel free to use the Fall and Spring semester sample Gantt Chart.</p> -->
+<!--         <p>[Insert Gantt Chart here.]</p> -->
 
         <h3>Contribution Table</h3>
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Proposal Contributions</th>
+                    <th>Work</th>
+                    <th>Proposed Team Members</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Member 1</td>
+                    <td>EDA</td>
+                    <td>Shreya, Twisha</td>
+                </tr>
+                <tr>
+                    <td>Feature Engineering</td>
                     <td>[Contributions]</td>
                 </tr>
                 <tr>
-                    <td>Member 2</td>
+                    <td>PCA</td>
                     <td>[Contributions]</td>
                 </tr>
                 <tr>
-                    <td>Member 3</td>
+                    <td>Unsupervised Learning</td>
                     <td>[Contributions]</td>
+                </tr>
+                <tr>
+                    <td>Supervised Learning</td>
+                    <td>[Contributions]</td>
+                </tr>
+                <tr>
+                    <td>Integrating into one application</td>
+                    <td>All</td>
                 </tr>
             </tbody>
         </table>
