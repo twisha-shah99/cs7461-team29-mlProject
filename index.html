@@ -5,157 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS7461 Team 29 - ML Project Proposal</title>
     
+    <!-- Google Font Integration -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.7;
+        /* Resetting some default styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
             background-color: #f4f4f4;
             color: #333;
-        }
-
-        /* Primary color scheme */
-        :root {
-            --primary-color: #008080;
-            --secondary-color: #ffa500;
-            --accent-color: #32cd32;
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --link-hover: #ffa500;
+            padding: 20px;
         }
 
         h1, h2, h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            color: #0056b3;
         }
 
         h1 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-top: 30px;
-        }
-
-        h2 {
-            font-size: 2rem;
+            font-size: 2.5em;
             margin-bottom: 20px;
         }
 
-        h3 {
-            font-size: 1.5rem;
+        h2 {
+            font-size: 2em;
             margin-bottom: 15px;
         }
 
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        p, ul, ol {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
         a {
-            color: var(--accent-color);
+            color: #0056b3;
             text-decoration: none;
             font-weight: bold;
         }
 
         a:hover {
-            color: var(--link-hover);
-        }
-
-        ul, ol {
-            margin-left: 20px;
+            text-decoration: underline;
         }
 
         .content-section {
-            background-color: var(--bg-color);
-            padding: 25px;
+            background-color: #fff;
+            padding: 30px;
             margin: 20px 0;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        /* Adding subtle background soccer-themed imagery */
+        body:before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1602081577288-28098e9d6eea?fit=crop&w=1400&q=80') no-repeat center center/cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        /* Accent border for tables */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         table, th, td {
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
         }
 
         th, td {
-            padding: 12px;
+            padding: 15px;
             text-align: left;
         }
 
         th {
-            background-color: var(--primary-color);
+            background-color: #0056b3;
             color: #fff;
+            font-weight: 700;
         }
 
-        /* New button style */
+        td {
+            background-color: #fff;
+        }
+
+        /* Buttons and links styling */
         .button {
-            background-color: var(--secondary-color);
-            color: #fff;
+            background-color: #0056b3;
+            color: white;
             padding: 10px 20px;
-            border-radius: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
+            font-size: 1em;
         }
 
         .button:hover {
-            background-color: var(--link-hover);
+            background-color: #003d80;
         }
 
-        /* Add subtle animations */
-        .content-section {
-            animation: fadeInUp 0.5s ease-out;
+        /* Adding hover effect for links and references */
+        ul li a {
+            color: #ff6b6b;
+            transition: color 0.3s ease;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+        ul li a:hover {
+            color: #ff3b3b;
+        }
+
+        /* Media Queries for better responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.4em;
             }
         }
-
-        /* Grid layout for contribution table */
-        .contribution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .contribution-grid div {
-            background-color: var(--bg-color);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        /* Section dividers */
-        .section-divider {
-            height: 5px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
-            margin: 40px 0;
-            border-radius: 50px;
-        }
-
-        /* Footer style */
-        footer {
-            background-color: var(--primary-color);
-            padding: 15px;
-            text-align: center;
-            color: #fff;
-        }
-
-        /* Custom fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
     </style>
 </head>
 <body>
-
     <h1>CS7461 Team 29 - ML Project Proposal</h1>
     <h1>Optimizing Player Selection</h1>
 
@@ -170,35 +169,27 @@
             <li>Supervised learning techniques will be utilized to classify players and identify the best team compositions based on comprehensive player attributes and performance metrics.</li>
             <li>These approaches help automate the analysis of teams and players, providing data-driven insights to improve team performance by enabling better strategic decisions and more effective player selection for specific matchups.</li>
         </ul>
-    </div>
 
-    <div class="section-divider"></div>
-
-    <div class="content-section">
-        <h2>Dataset Description</h2>
+        <h3>Dataset Description</h3>
         <ul>
-            <li>The <strong><a href="https://github.com/statsbomb/open-data/tree/master/data">data</a></strong> is provided as JSON files exported from the StatsBomb Data API.</li>
+            <li>The <a href="https://github.com/statsbomb/open-data/tree/master/data" class="button">data</a> is provided as JSON files exported from the StatsBomb Data API.</li>
             <li><strong>Events Data:</strong> This contains over 3 million events from around 7,000 matches, each tagged with event types like passes, shots, ball recoveries, and more, along with detailed location information.</li>
             <li><strong>Matches Data:</strong> Information about the matches themselves, including teams, scores, and dates.</li>
             <li><strong>Lineups Data:</strong> Details on players' positions, including their minutes played and substitutions during matches.</li>
             <li><strong>Freeze Frame Data:</strong> Positional data for players at key moments, such as when a shot is taken.</li>
-            <li>More documentation about the meaning of different events and the format of the JSON can be found in the <strong><a href="https://github.com/statsbomb/open-data/tree/master/doc">doc</a></strong> directory.</li>
+            <li>More documentation about the meaning of different events and the format of the JSON can be found in the <a href="https://github.com/statsbomb/open-data/tree/master/doc" class="button">doc</a> directory.</li>
         </ul>
     </div>
-
-    <div class="section-divider"></div>
 
     <div class="content-section">
         <h2>Problem Definition</h2>
 
         <h3>Problem</h3>
-        <p>Football teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches often rely on subjective judgments that can lead to poor team performance in games.</p>
+        <p>Football teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches often rely on subjective judgements that can lead to poor team performance in games.</p>
 
         <h3>Motivation</h3>
-        <p>Automating the analysis of teams to explore the best playing styles can allow teams to make better and strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams best select their players and strategy. This, in turn, will help teams better prepare for their games and enhance their performance.</p>
+        <p>Automating the analysis of teams to explore the best playing styles can allow teams to make better and strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams to best select their players and strategy. This, in turn, will help teams better prepare for their games and enhance their performance in games.</p>
     </div>
-
-    <div class="section-divider"></div>
 
     <div class="content-section">
         <h2>Methods</h2>
@@ -210,113 +201,108 @@
             <li><strong>Principal Component Analysis for Dimensionality Reduction</strong></li>
         </ol>
 
-        <h3>Unsupervised Learning</h3>
+        <h3>Unsupervised Learning</h3>  
         <p>Team Cluster Analysis</p>
         <ol>
             <li><strong>Method 1: K-Means + GMM</strong></li>
             <li><strong>Method 2: Hierarchical Clustering</strong></li>
         </ol>
         
-        <h3>Supervised Learning</h3>
-        <p>Player Metric Evaluation</p>
+        <h3>Supervised Learning</h3>  
+        <p>Player Metric Evaluation</p>    
         <ol>
             <li><strong>Method 1: SVM</strong></li>
             <li><strong>Method 2: Random Forest</strong></li>
             <li><strong>Method 3: Gradient Boost</strong></li>
         </ol>
-
-        <h3>Integrating Supervised and Unsupervised Learning</h3>
-        <p>This integrated approach combines clustering techniques to identify team playing styles with supervised learning methods for player classification and performance evaluation.</p>
         
+        <h3>Integrating Supervised and Unsupervised Learning</h3>  
+        <p>This integrated approach combines clustering techniques to identify team playing styles with supervised learning methods for player classification and performance evaluation. By merging these analyses, we create a comprehensive system that can assess how well individual players fit into specific team compositions and predict potential match outcomes when considering lineup changes or transfers.</p>
+
         <h4>Tools and Technologies:</h4>
         <ul>
-            <li>🐍 <strong>Python Libraries:</strong> Scikit-learn, xGBoost, Pandas, Matplotlib, Seaborn, NumPy</li>
-            <li>🤖 <strong>Machine Learning Algorithms:</strong> K-means clustering, t-SNE for visualization, Random Forest classifier, Gradient Boosting Machine, SVM, Gaussian Mixture Models, Hierarchical Clustering</li>
-            <li>📊 <strong>Data:</strong> Team statistics, player statistics, transfer data, historical match data</li>
+            <li>🐍 <strong>Python Libraries</strong>: Scikit-learn (for K-means, t-SNE, Random Forest, GMM), xGBoost, Pandas, Matplotlib, Seaborn, NumPy</li>
+            <li>🤖 <strong>Machine Learning Algorithms</strong>: K-means clustering, t-SNE for visualization, Random Forest classifier, Gradient Boosting Machine, SVM, Gaussian Mixture Models, Hierarchical Clustering</li>
+            <li>📊 <strong>Data</strong>: Team statistics, player statistics, transfer data, historical match data</li>
         </ul>
     </div>
 
-    <div class="section-divider"></div>
-
     <div class="content-section">
         <h2>(Potential) Results and Discussion</h2>
-        <p>This project would employ both supervised and unsupervised learning techniques to analyze football teams and players. Our integrated system would cluster teams by playing styles, simulate matchups, identify optimal players for a particular match-up, and predict match outcomes using machine learning models.</p>
+        <p>This project would employ both supervised and unsupervised learning techniques to analyze football teams and the players. Our integrated system would cluster teams by playing styles, simulating matchups, identifying optimal players for a particular match-up, and predicting match outcomes using machine learning models.</p>
 
         <h3>✅ Quantitative Metrics</h3>
         <ol>
-            <li><strong>F-1 Score:</strong> Targeting an F-1 score of 0.8 or higher for classification models.</li>
-            <li><strong>Root Mean Square Error (RMSE):</strong> Aiming for an RMSE of 0.5 or lower in prediction tasks.</li>
-            <li><strong>Adjusted Rand Index (ARI):</strong> Targeting an ARI score of 0.6 or higher for clustering validation.</li>
-            <li><strong>Homogeneity Score:</strong> Aiming for a homogeneity score of 0.7 or higher for consistent cluster formation.</li>
-            <li><strong>Accuracy (Supervised Learning):</strong> Targeting an accuracy of 75% or higher for match outcome predictions.</li>
-            <li><strong>Fowlkes-Mallows Index:</strong> Aiming for an FMI score of 0.6 or higher for balanced clustering results.</li>
-            <li><strong>Cross-Validation Score:</strong> Targeting 70% or higher to ensure model robustness.</li>
+            <li><strong>F-1 Score:</strong> We aim for an F-1 score of 0.8 or higher, balancing precision and recall in our player classification models.</li> 
+            <li><strong>Root Mean Square Error (RMSE):</strong> For regression tasks like predicting player ratings, we target an RMSE of 0.5 or lower, indicating high prediction accuracy.</li> 
+            <li><strong>Adjusted Rand Index (ARI):</strong> Our goal would be to achieve an ARI score of 0.6 or higher, which would be indicative of a meaningful correspondence between the clusters of playing styles and any available ground truth data.</li>
+            <li><strong>Homogeneity Score:</strong> We aim to achieve a homogeneity score of 0.7 or higher, which would ensure that teams within each cluster exhibit consistent playing styles.</li>
+            <li><strong>Accuracy (Supervised Learning):</strong> We expect an accuracy of 75% or higher when predicting match outcomes using supervised learning models like Random Forest and Gradient Boosting Machines.</li>
+            <li><strong>Fowlkes-Mallows Index:</strong> We aim to target an FMI score of 0.6 or higher which would ensure balanced precision and recall in our clustering results, which would in turn indicate that the clusters represent both true positives and true negatives effectively.</li>
+            <li><strong>Cross-Validation Score:</strong> Using cross-validation for supervised learning, we aim to achieve an accuracy of at least 70%, ensuring model robustness across different subsets.</li>
         </ol>
 
         <h3>Project Goals</h3>
         <ul>
-            <li>Accurately group football teams based on their playing styles.</li>
-            <li>Optimize player selection by matching player attributes to opponent characteristics.</li>
-            <li>Predict match outcomes with high accuracy.</li>
-            <li>Provide data-driven insights that streamline preparation and resource allocation.</li>
+            <li>Our project aims to accurately group football teams based on their playing styles. By clustering teams, we plan to uncover patterns and similarities that would help coaches and analysts devise more effective game strategies. We would also aim to optimize player selection by matching player attributes to the characteristics of the opponents, which would in turn improve a team’s tactical response to different playing styles.</li>
+            <li>In addition, we also aim to predict match outcomes using different models we aim to implement. The insights gained would assist teams in preparing for upcoming matches with greater precision, utilizing data-driven decisions to optimize player performance and overall strategy.</li>
+            <li>Our sustainability goal would focus on minimizing the reliance on extensive manual analysis and scouting by providing detailed data-driven insights that would streamline preparation resource allocation. We would also aim to ensure the model remains ethically sound by treating all teams fairly, focusing solely on objective performance metrics and avoiding biases that could disadvantage smaller clubs or low-budget teams.</li>
         </ul>
 
         <h3>Expected Results</h3>
         <ul>
-            <li>Identify distinct clusters of teams with similar playing styles.</li>
-            <li>Optimize player selection based on opponent characteristics.</li>
-            <li>Achieve at least 75% accuracy in predicting match outcomes.</li>
-            <li>Provide actionable insights into tactical trends and team performance.</li>
+            <li>We expect to be able to identify distinct clusters of teams with similar playing styles, such as high-pressing or possession-based strategies. This clustering would offer actionable insights for coaches to tailor their tactics for different matchups. Additionally, our system would also aim to optimize player selection based on opponent characteristics, which would ensure that the best players are chosen to counter specific styles of play.</li>
+            <li>Our prediction models should achieve at least 75% accuracy in predicting match outcomes. This would help teams make more informed decisions during the preparation of games. We also expect the clustering to highlight tactical trends that would correlate with success, providing teams with deeper insights into how different playing styles interact and evolve over time.</li>
         </ul>
     </div>
 
-    <div class="section-divider"></div>
-
     <div class="content-section">
         <h2>References</h2>
+        <h3>3+ References (preferably peer-reviewed)</h3>
         <ol>
-            <li><a href="https://www.guidetofootball.com/tactics/role-categories/" target="_blank">Football Tactics - Role Categories</a></li>
-            <li><a href="https://statsbomb.com/what-we-do/american-football-data-and-iq/" target="_blank">StatsBomb - Football Data and IQ</a></li>
+            <li><a href="https://www.guidetofootball.com/tactics/role-categories/">Guide to Football Tactics</a></li>
+            <li><a href="https://statsbomb.com/what-we-do/american-football-data-and-iq/">StatsBomb Football Data</a></li>
             <li>[Reference 3]</li>
         </ol>
     </div>
 
-    <div class="section-divider"></div>
-
     <div class="content-section">
         <h2>Proposal Submission Requirements</h2>
-
         <h3>Contribution Table</h3>
-        <div class="contribution-grid">
-            <div>
-                <h4>EDA</h4>
-                <p>Shreya, Twisha</p>
-            </div>
-            <div>
-                <h4>Feature Engineering</h4>
-                <p>[Contributions]</p>
-            </div>
-            <div>
-                <h4>PCA</h4>
-                <p>[Contributions]</p>
-            </div>
-            <div>
-                <h4>Unsupervised Learning</h4>
-                <p>Shreya, Siddharth</p>
-            </div>
-            <div>
-                <h4>Supervised Learning</h4>
-                <p>Twisha, Siddharth</p>
-            </div>
-            <div>
-                <h4>Integration</h4>
-                <p>All</p>
-            </div>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Work</th>
+                    <th>Proposed Team Members</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>EDA</td>
+                    <td>Shreya, Twisha</td>
+                </tr>
+                <tr>
+                    <td>Feature Engineering</td>
+                    <td>[Contributions]</td>
+                </tr>
+                <tr>
+                    <td>PCA</td>
+                    <td>[Contributions]</td>
+                </tr>
+                <tr>
+                    <td>Unsupervised Learning</td>
+                    <td>Shreya, Siddharth</td>
+                </tr>
+                <tr>
+                    <td>Supervised Learning</td>
+                    <td>Twisha, Siddharth</td>
+                </tr>
+                <tr>
+                    <td>Integrating into one application</td>
+                    <td>All</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-    <footer>
-        <p>CS7461 Team 29 &copy; 2024 - All Rights Reserved</p>
-    </footer>
 </body>
 </html>
