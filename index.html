@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,85 +7,136 @@
     
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            background-color: #f9f9f9;
             color: #333;
         }
-        h1, h2, h3 {
-            color: #0056b3;
-        }
+
         h1 {
             text-align: center;
+            color: #0056b3;
+            background-color: #e0e0ff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-bottom: 5px solid #004080;
+            border-radius: 0 0 10px 10px;
         }
+
+        h2 {
+            color: #004080;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #0056b3;
+        }
+
+        p, li {
+            color: #333;
+        }
+
         a {
             color: #0056b3;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         ul, ol {
             margin-left: 20px;
         }
+
         .content-section {
             background-color: #fff;
-            padding: 20px;
-            margin: 20px 0;
+            padding: 25px;
+            margin: 20px auto;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
         }
+
+        .intro-section {
+            background: url('https://your-image-url.com/soccer-bg.jpg') no-repeat center center / cover;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 8px;
+        }
+
+        .intro-section p {
+            font-size: 1.2em;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
+
         table, th, td {
             border: 1px solid #ccc;
         }
+
         th, td {
             padding: 10px;
             text-align: left;
         }
+
         th {
             background-color: #f2f2f2;
+            color: #0056b3;
+        }
+
+        .soccer-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('https://your-icon-url.com/soccer-ball-icon.png') no-repeat center center / cover;
+            vertical-align: middle;
+        }
+
+        footer {
+            background-color: #004080;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <h1>CS7461 Team 29 - ML Project Proposal</h1>
-    <h1>Optimizing Player Selection</h1>
+    <h1>Optimizing Player Selection in Football</h1>
+
+    <div class="intro-section">
+        <p><strong>Enhancing football performance through data-driven strategies using machine learning.</strong></p>
+    </div>
 
     <div class="content-section">
         <h2>Introduction/Background</h2>
-        <p>The application of machine learning in sports analytics has gained significant momentum, offering coaches, analysts, and teams actionable insights to improve performance. In soccer, understanding and optimizing team strategies, player selection, and match outcomes is critical for success. Traditional approaches often rely on subjective judgments, which may lead to suboptimal decisions.</p>
-        
+        <p>Machine learning in sports analytics provides valuable insights to improve performance. In football, optimizing strategies and player selection is crucial for success. Our project automates team analysis, helping teams make better decisions and perform optimally on the field.</p>
+
         <h3>Literature Review</h3>
         <ul>
-            <li>
-                Recent studies have applied machine learning techniques to address challenges in soccer, such as optimizing team strategies and player selection.
-            </li>
-            <li>
-                Unsupervised methods, like K-means clustering and Gaussian Mixture Models (GMM), have been used to cluster teams based on statistical features such as goals and possession, grouping them by similar tactical styles.
-            </li>
-            <li>
-                Supervised learning techniques will be utilized to classify players and identify the best team compositions based on comprehensive player attributes and performance metrics.
-            </li>
-            <li>
-                These approaches help automate the analysis of teams and players, providing data-driven insights to improve team performance by enabling better strategic decisions and more effective player selection for specific matchups.
-            </li>
+            <li>Studies have applied machine learning to optimize team strategies and player selection.</li>
+            <li>Unsupervised learning methods like K-means and GMM cluster teams by tactics.</li>
+            <li>Supervised learning classifies players, helping automate decision-making for optimal performance.</li>
         </ul>
 
         <h3>Dataset Description</h3>
         <ul>
-            <li>The <strong><a href="https://github.com/statsbomb/open-data/tree/master/data">data</a> </strong> is provided as JSON files exported from the StatsBomb Data API. </li>
-            <li><strong>Events Data:</strong>This contains over 3 million events from around 7,000 matches, each tagged with event types like passes, shots, ball recoveries, and more, along with detailed location information.</li>
-            <li><strong>Matches Data:</strong> Information about the matches themselves, including teams, scores, and dates.</li>
-            <li><strong>Lineups Data:</strong> Details on players' positions, including their minutes played and substitutions during matches.</li>
-            <li><strong>Freeze Frame Data:</strong> Positional data for players at key moments, such as when a shot is taken.</li>
-            <li>More documentation about the meaning of different events and the format of the JSON can be found in the <strong><a href="https://github.com/statsbomb/open-data/tree/master/doc">doc</a></strong> directory.</li>
+            <li><strong><a href="https://github.com/statsbomb/open-data/tree/master/data">StatsBomb Data</a></strong> provides detailed event data, match stats, lineups, and player positions.</li>
+            <li>Events data includes over 3 million events from 7,000 matches, tagged with event types such as passes, shots, and more.</li>
         </ul>
 
         <h3>Dataset Link</h3>
@@ -96,125 +145,51 @@
 
     <div class="content-section">
         <h2>Problem Definition</h2>
-
         <h3>Problem</h3>
-        <p>Football teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches oftern rely on subjective judgements that an lead to poor team performance in games.</p>
+        <p>Football teams utilize various playing styles, making it difficult to optimize strategies and select the best players for a given opponent. Coaches often rely on subjective judgments that may lead to suboptimal performance.</p>
 
         <h3>Motivation</h3>
-        <p>Automating the analysis of teams to explore the best playing styles can allow teams to make better and strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams to best select their players and strategy. This, in turn, will help teams better prepare for their games and enhance their performance in games.</p>
+        <p>Automating team analysis allows for data-driven decision-making. Using unsupervised learning for clustering teams by tactics and supervised learning for match predictions, our project provides actionable insights to help teams select optimal players and improve game performance.</p>
     </div>
 
-<div class="content-section">
-    <h2>Methods</h2>
-
-<!-- <p>Present proposed solutions, including specific data processing methods and machine learning algorithms, elaborating on their effectiveness. Identify specific functions/classes in existing packages and libraries (e.g., scikit-learn) rather than coding the algorithms from scratch.</p> -->
-
-<h3>Data Preprocessing Methods Identified</h3>
-
-    <ol>
-      <li><strong>Exploratory Data Analysis to find important features</strong></li>
-      <li><strong>Feature Engineering - to make relevant combinations of features</strong></li>
-      <li><strong>Principal Component Analysis for Dimensionality Reduction</strong></li>
-    </ol>
-
-<h3>Unsupervised Learning</h3>  
-    <p>Team Cluster Analysis</p>
-    <ol>
-        We will employ K-means clustering to group teams based on their playing styles, utilizing features such as goals scored, tackles made, and possession statistics. The optimal number of clusters will be determined using the elbow method, and t-SNE will be used for cluster visualization. To capture more nuanced team characteristics, we'll implement Gaussian Mixture Models (GMM) for flexible clustering and Hierarchical Clustering for multi-level similarity analysis.
-        <li><strong>Method 1: K-Means + GMM</strong></li>
-          <li><strong>Method 2: Hierarchial Clustering</strong></li>
-    </ol>
-    
-<h3>Supervised Learning</h3>  
-<p>Player Metric Evaluation</p>    
-<ol>
-    We aim to create a comprehensive football player classification system using advanced machine learning techniques with the StatsBomb dataset. We will combine ensemble methods, including XGBoost, Random Forest, and Support Vector Machines, to categorize players by position, role, and playing style. By analyzing features such as physical attributes, technical skills, tactical awareness, and performance statistics, we aim to enhance tactical analysis and understand player dynamics within teams.
-  <li><strong>Method 1: SVM</strong></li>
-  <li><strong>Method 2: Random Forest</strong></li>
-  <li><strong>Method 3: Gradient Boost</strong></li>
-
-<h3>Integrating Supervised and Unsupervised Learning</h3>  
-    <p>This integrated approach combines clustering techniques to identify team playing styles with supervised learning methods for player classification and performance evaluation. By merging these analyses, we create a comprehensive system that can assess how well individual players fit into specific team compositions and predict potential match outcomes when considering lineup changes or transfers. </p>
-  <h4>Tools and Technologies:</h4>
-  <ul>
-    <li>🐍 <strong>Python Libraries</strong>: Scikit-learn (for K-means, t-SNE, Random Forest, GMM), xGBoost, Pandas, Matplotlib, Seaborn, NumPy</li>
-    <li>🤖 <strong>Machine Learning Algorithms</strong>: K-means clustering, t-SNE for visualization, Random Forest classifier, Gradient Boosting Machine, SVM, Gaussian Mixture Models, Hierarchical Clustering</li>
-    <li>📊 <strong>Data</strong>: Team statistics, player statistics, transfer data, historical match data</li>
-  </ul>
-
-</ol>
-    
-<!-- <ol>
-  <li><strong>Method 1: Supervised Learning</strong></li>
-    <p>We are pursuing three main objectives: player transfer evaluation, player performance prediction, and shot outcome prediction. The Player Transfer Evaluation System uses supervised learning to assess transfer success by analyzing player stats, team metrics, and transfer details. A Random Forest Classifier predicts transfer success, a Gradient Boosting Machine forecasts performance improvements, and an SVM classifies transfers as good or poor fits. For shot outcome prediction, models like Logistic Regression or Random Forest predict goal likelihood based on shot features. Lastly, player performance prediction employs a Gradient Boosting Regressor to forecast ratings based on recent form and opponent strength.</p>
-  
-  <li><strong>Method 2: Unsupervised Learning:</strong></li>
-    <p>We aim to use unsupervised learning for two key objectives: team clustering and player-team compatibility analysis. For team clustering, K-means clustering will group teams by playing styles using features like goals scored, tackles, and possession. The elbow method will help find the optimal number of clusters, and t-SNE will be used to visualize the clusters. We will also implement Gaussian Mixture Models (GMM) for more flexible clustering, allowing teams to belong to multiple clusters, and use Hierarchical Clustering to explore broad and nuanced team similarities.
-For player-team compatibility, we will develop a cosine similarity measure to quantify how well a player’s skills align with a team's tactical needs. A compatibility score will combine this similarity with team-specific requirements. To select the best players, a greedy algorithm will maximize compatibility while considering recent performance and positional needs.</p>
-  <li><strong>Method 3: Integration of Supervised learning and Unsupervised learning</strong></li>
-  <p>
-    We aim to utilize machine learning techniques for clustering teams based on playing style, selecting matchups between teams from different clusters, identifying optimal players for a given matchup, and predicting the outcome of the match using historical data. Develop a system by combining unsupervised learning (K-means clustering), supervised learning (Random Forest classifier), and heuristic methods (player selection based on opponent characteristics), which would offer a sophisticated approach to team and player analysis.
-  </p> 
-  
-  <h4>Tools and Technologies:</h4>
-  <ul>
-    <li>🐍 <strong>Python Libraries</strong>: Scikit-learn (for K-means, t-SNE, Random Forest, GMM), Pandas, Matplotlib, Seaborn, NumPy</li>
-    <li>🤖 <strong>Machine Learning Algorithms</strong>: K-means clustering, t-SNE for visualization, Random Forest classifier, Gradient Boosting Machine, SVM, Gaussian Mixture Models, Hierarchical Clustering</li>
-    <li>📊 <strong>Data</strong>: Team statistics, player statistics, transfer data, historical match data</li>
-  </ul>
-
-</ol> -->
-</div>
-
-
-<div class="content-section">
-    <h2>(Potential) Results and Discussion</h2>
-    <p>This project would employ both supervised and unsupervised learning techniques to analyze football teams and the players. Our integrated system would cluster teams by playing styles, simulating matchups, identifying optimal players for a particular match-up, and predicting match outcomes using machine learning models.</p>
-
-    <h3>✅ Quantitative Metrics</h3>
-    <ol>
-        <li><strong>F-1 Score:</strong> We aim for an F-1 score of 0.8 or higher, balancing precision and recall in our player classification models.</li> 
-        <li><strong>Root Mean Square Error (RMSE):</strong> For regression tasks like predicting player ratings, we target an RMSE of 0.5 or lower, indicating high prediction accuracy.</li> 
-        <li><strong>Adjusted Rand Index (ARI):</strong> Our goal would be to achieve an ARI score of 0.6 or higher, which would be indicative of a meaningful correspondence between the clusters of playing styles and any available ground truth data.</li>
-        <li><strong>Homogeneity Score:</strong> We aim to achieve a homogeneity score of 0.7 or higher, which would ensure that teams within each cluster exhibits consistent playing styles.</li>
-        <li><strong>Accuracy (Supervised Learning):</strong> We expect an accuracy of 75% or higher when predicting match outcomes using supervised learning models like Random Forest and Gradient Boosting Machines.</li>
-        <li><strong>Fowlkes-Mallows Index:</strong> We aim to target an FMI score of 0.6 or higher which would ensure balanced precision and recall in our clustering results, which would in turn indicate that the clusters represent both true positives and true negatives effectively.</li>
-        <li><strong>Cross-Validation Score:</strong> Using cross-validation for supervised learning, we aim to achieve an accuracy of at least 70% ensuring model robustness across different subsets.</li>
-    </ol>
-
-    <h3>Project Goals</h3>
-    <ul>
-        <li>Our project aims to accurately group football teams based on their playing styles. By clustering teams, we plan to uncover patterns and similarities that would help coaches and analysts devise more effective game strategies. We would also aim to optimize player selection by matching player attributes to the characteristics of the opponents, which would in turn improve a team’s tactical response to different playing styles.</li>
-        <li>In addition, we also aim to predict match outcomes using different models we aim to implement. The insights gained would assist teams in preparing for upcoming matches with greater precision, utilizing data-driven decisions to optimize player performance and overall strategy.</li>
-        <li>Our sustainability goal would focus on minimizing the reliance on extensive manual analysis and scouting by providing detailed data-driven insights that would streamline preparation resource allocation. We would also aim to ensure the model remains ethically sound by treating all teams fairly, focusing solely on objective performance metrics and avoiding biases that could disadvantage smaller clubs or low-budget teams.</li>
-    </ul>
-
-    <h3>Expected Results</h3>
-    <ul>
-        <li>We expect to be able to identify distinct clusters of teams with similar playing styles, such as high-pressing or possession-based strategies. This clustering would offer actionable insights for coaches to tailor their tactics for different matchups. Additionally, our system would also aim to optimize player selection based on opponent characteristics, which would ensure that the best players are chosen to counter specific styles of play.</li>
-        <li>Our prediction models should achieve at least 75% accuracy in predicting match outcomes. This would help teams make more informed decisions during the preparation of games. We also expect the clustering to highlight tactical trends that would correlate with success, providing teams with deeper insights into how different playing styles interact and evolve over time.</li>
-    </ul>
-</div>
     <div class="content-section">
-        <h2>References</h2>
-        <h3>3+ References (preferably peer-reviewed)</h3>
+        <h2>Methods</h2>
+        <h3>Data Preprocessing</h3>
         <ol>
-            <li>[https://www.guidetofootball.com/tactics/role-categories/]</li>
-            <li>[https://statsbomb.com/what-we-do/american-football-data-and-iq/]</li>
-            <li>[Reference 3]</li>
+            <li>Exploratory Data Analysis to find important features</li>
+            <li>Feature Engineering for relevant combinations</li>
+            <li>Principal Component Analysis for dimensionality reduction</li>
         </ol>
 
-<!--         <h3>1+ In-Text Citation Per Reference</h3>
-        <p>[Provide in-text citations as necessary.]</p> -->
+        <h3>Unsupervised Learning</h3>
+        <p>K-means clustering will group teams based on playing styles, with GMM and Hierarchical Clustering used for more nuanced analysis. t-SNE will visualize clusters.</p>
+
+        <h3>Supervised Learning</h3>
+        <p>We will use Random Forest, SVM, and Gradient Boost to classify players and evaluate performance based on stats such as physical attributes and tactical awareness.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>(Potential) Results and Discussion</h2>
+        <p>Our project integrates supervised and unsupervised learning to analyze football teams and players, clustering teams by playing styles and predicting match outcomes. By optimizing player selection based on opponent characteristics, we aim to improve team performance.</p>
+
+        <h3>Quantitative Metrics</h3>
+        <ol>
+            <li>F-1 Score: Target 0.8 or higher</li>
+            <li>RMSE: Target 0.5 or lower</li>
+            <li>Adjusted Rand Index (ARI): 0.6 or higher</li>
+        </ol>
+    </div>
+
+    <div class="content-section">
+        <h2>References</h2>
+        <ol>
+            <li>[<a href="https://www.guidetofootball.com/tactics/role-categories/">Guide to Football Tactics</a>]</li>
+            <li>[<a href="https://statsbomb.com/what-we-do/american-football-data-and-iq/">StatsBomb Data and IQ</a>]</li>
+        </ol>
     </div>
 
     <div class="content-section">
         <h2>Proposal Submission Requirements</h2>
-
-<!--         <h3>Gantt Chart</h3> -->
-<!--         <p>List each member's planned responsibilities for the entirety of the project. Feel free to use the Fall and Spring semester sample Gantt Chart.</p> -->
-<!--         <p>[Insert Gantt Chart here.]</p> -->
-
         <h3>Contribution Table</h3>
         <table>
             <thead>
@@ -228,6 +203,7 @@ For player-team compatibility, we will develop a cosine similarity measure to qu
                     <td>EDA</td>
                     <td>Shreya, Twisha</td>
                 </tr>
+                </tr>
                 <tr>
                     <td>Feature Engineering</td>
                     <td>[Contributions]</td>
@@ -238,11 +214,7 @@ For player-team compatibility, we will develop a cosine similarity measure to qu
                 </tr>
                 <tr>
                     <td>Unsupervised Learning</td>
-                    <td>[Shreya, Siddharth]</td>
-                </tr>
-                <tr>
-                    <td>Supervised Learning</td>
-                    <td>[Twisha, Siddharth]</td>
+                    <td>Siddharth, Shreya</td>
                 </tr>
                 <tr>
                     <td>Integrating into one application</td>
@@ -251,5 +223,9 @@ For player-team compatibility, we will develop a cosine similarity measure to qu
             </tbody>
         </table>
     </div>
+
+    <footer>
+        <p>CS7461 Team 29 - Machine Learning Project Proposal © 2024</p>
+    </footer>
 </body>
 </html>
