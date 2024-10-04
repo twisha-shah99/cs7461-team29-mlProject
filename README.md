@@ -1,4 +1,4 @@
-# cs7461-team29-mlProject
+# cs7641-team29-mlProject
 
 # Proposal Sections & Checklist
 
