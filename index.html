@@ -14,6 +14,9 @@
             padding: 0;
             background-color: #f0f0f0;
             color: #333;
+            background-image: url('https://source.unsplash.com/1600x900/?soccer-field');
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         h1,
@@ -54,18 +57,18 @@
         }
 
         .content-section {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 40px;
             margin: 30px auto;
             width: 85%;
             border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         .intro-section {
             text-align: center;
             padding: 50px;
-            background: url('https://source.unsplash.com/1600x900/?soccer') no-repeat center/cover;
+            background: url('https://source.unsplash.com/1600x900/?soccer-ball') no-repeat center/cover;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
@@ -145,12 +148,23 @@
             margin-top: 30px;
         }
 
+        .soccer-icon {
+            display: inline-block;
+            background-image: url('https://image.flaticon.com/icons/png/512/166/166902.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="intro-section">
-        <h1>CS7461 Team 29 - ML Project Proposal</h1>
+        <h1><span class="soccer-icon"></span>CS7461 Team 29 - ML Project Proposal</h1>
         <p>Optimizing Player Selection for Soccer Using Machine Learning</p>
     </div>
 
@@ -219,11 +233,11 @@
                 </tr>
                 <tr>
                     <td>Feature Engineering</td>
-                    <td>Twisha</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Principal Component Analysis (PCA)</td>
-                    <td>Siddharth</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Unsupervised Learning</td>
@@ -250,9 +264,3 @@
         </ul>
     </div>
 
-    <footer>
-        <p>&copy; 2024 CS7461 Team 29. All rights reserved.</p>
-    </footer>
-</body>
-
-</html>
