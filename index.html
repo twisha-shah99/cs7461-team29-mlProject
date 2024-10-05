@@ -62,32 +62,24 @@
 
     <div class="content-section">
         <h2>Introduction/Background</h2>
-        <p>The application of machine learning in sports analytics has gained significant momentum, offering coaches, analysts, and teams actionable insights to improve performance. In soccer, understanding and optimizing team strategies, player selection, and match outcomes is critical for success. Traditional approaches often rely on subjective judgments, which may lead to suboptimal decisions.</p>
+        <p>
+            Machine learning can be applied to sports analytics to get insights to improve a team's performance. Since traditional approaches rely on subjective judgements, optimizing team performance through a data-driven approach becomes crucial.
+            
+           </p>
         
         <h3>Literature Review</h3>
-        <ul>
-            <li>
-                Recent studies have applied machine learning techniques to address challenges in soccer, such as optimizing team strategies and player selection.
-            </li>
-            <li>
-                Unsupervised methods, like K-means clustering and Gaussian Mixture Models (GMM), have been used to cluster teams based on statistical features such as goals and possession, grouping them by similar tactical styles.
-            </li>
-            <li>
-                Supervised learning techniques will be utilized to classify players and identify the best team compositions based on comprehensive player attributes and performance metrics.
-            </li>
-            <li>
-                These approaches help automate the analysis of teams and players, providing data-driven insights to improve team performance by enabling better strategic decisions and more effective player selection for specific matchups.
-            </li>
-        </ul>
+        <p>
+            Recent studies have used machine learning to address team formation and player selection. Unsupervised methods like GMMs and K-means cluster teams based on goals, and supervised learning helps identify optimal team compositions.
+        </p>
 
         <h3>Dataset Description</h3>
         <ul>
             <li>The <strong><a href="https://github.com/statsbomb/open-data/tree/master/data">data</a> </strong> is provided as JSON files exported from the StatsBomb Data API. </li>
-            <li><strong>Events Data:</strong>This contains over 3 million events from around 7,000 matches, each tagged with event types like passes, shots, ball recoveries, and more, along with detailed location information.</li>
+            <li><strong>Events Data:</strong>3 million events spanning over 7000 matches with information about shots and passes</li>
             <li><strong>Matches Data:</strong> Information about the matches themselves, including teams, scores, and dates.</li>
-            <li><strong>Lineups Data:</strong> Details on players' positions, including their minutes played and substitutions during matches.</li>
-            <li><strong>Freeze Frame Data:</strong> Positional data for players at key moments, such as when a shot is taken.</li>
-            <li>More documentation about the meaning of different events and the format of the JSON can be found in the <strong><a href="https://github.com/statsbomb/open-data/tree/master/doc">doc</a></strong> directory.</li>
+            <li><strong>Lineups Data:</strong> Player positions and subpositions during matches.</li>
+          
+            <li>Further documentation:  <strong><a href="https://github.com/statsbomb/open-data/tree/master/doc">doc</a></strong></li>
         </ul>
 
         <h3>Dataset Link</h3>
@@ -98,10 +90,10 @@
         <h2>Problem Definition</h2>
 
         <h3>Problem</h3>
-        <p>soccer teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches oftern rely on subjective judgements that an lead to poor team performance in games.</p>
+        <p>Soccer teams play using various styles; however, optimizing these strategies and choosing the best players for a particular opponent can be a difficult task. Rather than using a data-driven approach to cluster teams, coaches oftern rely on subjective judgements that an lead to poor team performance in games.</p>
 
         <h3>Motivation</h3>
-        <p>Automating the analysis of teams to explore the best playing styles can allow teams to make better and strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams to best select their players and strategy. This, in turn, will help teams better prepare for their games and enhance their performance in games.</p>
+        <p>Automating the analysis of teams to explore the best playing styles can allow teams to make better and strategic decisions. Using unsupervised learning to cluster teams based on tactics and supervised learning to predict match outcomes, this project will provide concrete insights to help teams to best select their players and strategy.</p>     
     </div>
 
 <div class="content-section">
@@ -118,29 +110,25 @@
     </ol>
 
 <h3>Unsupervised Learning</h3>  
-    <p>Team Cluster Analysis</p>
+
     <ol>
-        We will employ K-means clustering to group teams based on their playing styles, utilizing features such as goals scored, tackles made, and possession statistics. The optimal number of clusters will be determined using the elbow method, and t-SNE will be used for cluster visualization. To capture more nuanced team characteristics, we'll implement Gaussian Mixture Models (GMM) for flexible clustering and Hierarchical Clustering for multi-level similarity analysis.
+        Using K-means, we will cluster teams based on their playing styles. The optimal number of clusters will be determined using the elbow method with t-SNE being used for cluster visualization. To capture the finer team details, we will use GMMs for flexible clustering and Hierarchical Clustering for multi-level similarity analysis.
+        <br>
         <li><strong>Method 1: K-Means + GMM</strong></li>
           <li><strong>Method 2: Hierarchial Clustering</strong></li>
     </ol>
     
 <h3>Supervised Learning</h3>  
-<p>Player Metric Evaluation</p>    
+   
 <ol>
-    We aim to create a comprehensive soccer player classification system using advanced machine learning techniques with the StatsBomb dataset. We will combine ensemble methods, including XGBoost, Random Forest, and Support Vector Machines, to categorize players by position, role, and playing style. By analyzing features such as physical attributes, technical skills, tactical awareness, and performance statistics, we aim to enhance tactical analysis and understand player dynamics within teams.
+    We hope to create a classification system based on the StatsBomb dataset. Using ensemble methods including XGBoost, Random Forest, and Support Vector Machines, we hope to categorize players by role. By analyzing features such as physical attributes, technical skills, tactical awareness, and performance statistics, we aim to enhance tactical analysis and understand player dynamics within teams.
   <li><strong>Method 1: SVM</strong></li>
   <li><strong>Method 2: Random Forest</strong></li>
   <li><strong>Method 3: Gradient Boost</strong></li>
 
 <h3>Integrating Supervised and Unsupervised Learning</h3>  
     <p>This integrated approach combines clustering techniques to identify team playing styles with supervised learning methods for player classification and performance evaluation. By merging these analyses, we create a comprehensive system that can assess how well individual players fit into specific team compositions and predict potential match outcomes when considering lineup changes or transfers. </p>
-  <h4>Tools and Technologies:</h4>
-  <ul>
-    <li>🐍 <strong>Python Libraries</strong>: Scikit-learn (for K-means, t-SNE, Random Forest, GMM), xGBoost, Pandas, Matplotlib, Seaborn, NumPy</li>
-    <li>🤖 <strong>Machine Learning Algorithms</strong>: K-means clustering, t-SNE for visualization, Random Forest classifier, Gradient Boosting Machine, SVM, Gaussian Mixture Models, Hierarchical Clustering</li>
-    <li>📊 <strong>Data</strong>: Team statistics, player statistics, transfer data, historical match data</li>
-  </ul>
+
 
 </ol>
     
@@ -169,31 +157,34 @@ For player-team compatibility, we will develop a cosine similarity measure to qu
 
 <div class="content-section">
     <h2>(Potential) Results and Discussion</h2>
-    <p>This project would employ both supervised and unsupervised learning techniques to analyze soccer teams and the players. Our integrated system would cluster teams by playing styles, simulating matchups, identifying optimal players for a particular match-up, and predicting match outcomes using machine learning models.</p>
+    
 
     <h3>✅ Quantitative Metrics</h3>
     <ol>
-        <li><strong>F-1 Score:</strong> We aim for an F-1 score of 0.8 or higher, balancing precision and recall in our player classification models.</li> 
-        <li><strong>Root Mean Square Error (RMSE):</strong> For regression tasks like predicting player ratings, we target an RMSE of 0.5 or lower, indicating high prediction accuracy.</li> 
-        <li><strong>Adjusted Rand Index (ARI):</strong> Our goal would be to achieve an ARI score of 0.6 or higher, which would be indicative of a meaningful correspondence between the clusters of playing styles and any available ground truth data.</li>
-        <li><strong>Homogeneity Score:</strong> We aim to achieve a homogeneity score of 0.7 or higher, which would ensure that teams within each cluster exhibits consistent playing styles.</li>
-        <li><strong>Accuracy (Supervised Learning):</strong> We expect an accuracy of 75% or higher when predicting match outcomes using supervised learning models like Random Forest and Gradient Boosting Machines.</li>
-        <li><strong>Fowlkes-Mallows Index:</strong> We aim to target an FMI score of 0.6 or higher which would ensure balanced precision and recall in our clustering results, which would in turn indicate that the clusters represent both true positives and true negatives effectively.</li>
-        <li><strong>Cross-Validation Score:</strong> Using cross-validation for supervised learning, we aim to achieve an accuracy of at least 70% ensuring model robustness across different subsets.</li>
+        <li><strong>F-1 Score:</strong> of 0.8 or higher, balancing precision and recall in our player classification models</li> 
+        <li><strong>Root Mean Square Error (RMSE):</strong> of 0.5 or lower, indicating high prediction accuracy</li> 
+        
+        
+        <li><strong>Accuracy (Supervised Learning):</strong>  of 75% or higher when predicting match outcomes using supervised learning models</li>
+        
+      
     </ol>
 
     <h3>Project Goals</h3>
-    <ul>
-        <li>Our project aims to accurately group soccer teams based on their playing styles. By clustering teams, we plan to uncover patterns and similarities that would help coaches and analysts devise more effective game strategies. We would also aim to optimize player selection by matching player attributes to the characteristics of the opponents, which would in turn improve a team’s tactical response to different playing styles.</li>
-        <li>In addition, we also aim to predict match outcomes using different models we aim to implement. The insights gained would assist teams in preparing for upcoming matches with greater precision, utilizing data-driven decisions to optimize player performance and overall strategy.</li>
-        <li>Our sustainability goal would focus on minimizing the reliance on extensive manual analysis and scouting by providing detailed data-driven insights that would streamline preparation resource allocation. We would also aim to ensure the model remains ethically sound by treating all teams fairly, focusing solely on objective performance metrics and avoiding biases that could disadvantage smaller clubs or low-budget teams.</li>
-    </ul>
+<p>The project aims to group soccer teams by their playing styles to provide insights on improving strategies. Moreover, we hope to optimize player selection based on the opposition and predict outcomes to reduce the subjective decision making and provide new strategies backed by data.</p>
 
     <h3>Expected Results</h3>
-    <ul>
-        <li>We expect to be able to identify distinct clusters of teams with similar playing styles, such as high-pressing or possession-based strategies. This clustering would offer actionable insights for coaches to tailor their tactics for different matchups. Additionally, our system would also aim to optimize player selection based on opponent characteristics, which would ensure that the best players are chosen to counter specific styles of play.</li>
-        <li>Our prediction models should achieve at least 75% accuracy in predicting match outcomes. This would help teams make more informed decisions during the preparation of games. We also expect the clustering to highlight tactical trends that would correlate with success, providing teams with deeper insights into how different playing styles interact and evolve over time.</li>
-    </ul>
+<p>We hope to identify clusters of teams with similar playing styles offering insights to coaches to devise new strategies.
+    Our system will also player selection based off their opposition. We also hope to predict match outcomes with a 75% accuracy. Additionally, 
+     clustering should reveal trends that lead to success
+      providing insights into how playing styles evolve.</p>
+
+
+
+
+
+</p>
+    
 </div>
     <div class="content-section">
         <h2>References</h2>
